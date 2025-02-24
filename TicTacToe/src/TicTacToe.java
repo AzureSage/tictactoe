@@ -7,7 +7,7 @@ public class TicTacToe {
 
         GameBoard game1 = new GameBoard();
 
-        while(game1.hasEmptySpace() == true || game1.winner() != null){
+        while(game1.hasEmptySpace() == true || game1.winner() == null){
             do{
                 System.out.println("Your turn! Enter a position: ");
                 position = input.nextInt();
@@ -22,11 +22,11 @@ public class TicTacToe {
             }while(!game1.isEmpty(position) ||( position > 10 || position < 0));
 
             game1.placeSymbol(position);
-            if(game1.winner() != null){
+            if(game1.winner() != null || !game1.hasEmptySpace()){
                 break;
             }
             game1.makeMove();
-            if(game1.winner() != null){
+            if(game1.winner() != null || !game1.hasEmptySpace()){
                 break;
             }
             

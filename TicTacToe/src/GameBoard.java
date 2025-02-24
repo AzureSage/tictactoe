@@ -197,6 +197,10 @@ public class GameBoard {
         
     }
 
+    public int minimax(){
+        return 1;
+    }
+
     //returns whether a position is empty
     public boolean  isEmpty(int position){
         switch(position){
@@ -258,8 +262,10 @@ public class GameBoard {
         int playerCount = 0;
         int computerCount = 0;
 
-        if(!isEmpty(1) && !isEmpty(2) && !isEmpty(3)){
+        if(!isEmpty(1) && !isEmpty(2) && !isEmpty(3) && (playerCount != 3 && computerCount != 3)){
             int[] winPosition = {1, 2, 3};
+            playerCount = 0;
+            computerCount = 0;
 
             if(winPosition != null){
                 for(int position : winPosition){
@@ -272,8 +278,10 @@ public class GameBoard {
                 }
             }
         }
-        else if(!isEmpty(4) && !isEmpty(5) && !isEmpty(6)){
+        if(!isEmpty(4) && !isEmpty(5) && !isEmpty(6) && (playerCount != 3 && computerCount != 3)){
             int[] winPosition = {4, 5, 6};
+            playerCount = 0;
+            computerCount = 0;
 
             if(winPosition != null){
                 for(int position : winPosition){
@@ -286,8 +294,10 @@ public class GameBoard {
                 }
             }
         }
-        else if(!isEmpty(7) && !isEmpty(8) && !isEmpty(9)){
+        if(!isEmpty(7) && !isEmpty(8) && !isEmpty(9) && (playerCount != 3 && computerCount != 3)){
             int[] winPosition = {7, 8, 9};
+            playerCount = 0;
+            computerCount = 0;
 
             if(winPosition != null){
                 for(int position : winPosition){
@@ -300,8 +310,10 @@ public class GameBoard {
                 }
             }
         }
-        else if(!isEmpty(1) && !isEmpty(5) && !isEmpty(9)){
+        if(!isEmpty(1) && !isEmpty(5) && !isEmpty(9) && (playerCount != 3 && computerCount != 3)){
             int[] winPosition = {1, 5, 9};
+            playerCount = 0;
+            computerCount = 0;
 
             if(winPosition != null){
                 for(int position : winPosition){
@@ -314,8 +326,10 @@ public class GameBoard {
                 }
             }
         }
-        else if(!isEmpty(3) && !isEmpty(5) && !isEmpty(7)){
+        if(!isEmpty(3) && !isEmpty(5) && !isEmpty(7) && (playerCount != 3 && computerCount != 3)){
             int[] winPosition = {3, 5, 7};
+            playerCount = 0;
+            computerCount = 0;
 
             if(winPosition != null){
                 for(int position : winPosition){
@@ -328,8 +342,10 @@ public class GameBoard {
                 }
             }
         }
-        else if(!isEmpty(1) && !isEmpty(4) && !isEmpty(7)){
+        if(!isEmpty(1) && !isEmpty(4) && !isEmpty(7) && (playerCount != 3 && computerCount != 3)){
             int[] winPosition = {1, 4, 7};
+            playerCount = 0;
+            computerCount = 0;
 
             if(winPosition != null){
                 for(int position : winPosition){
@@ -342,8 +358,10 @@ public class GameBoard {
                 }
             }
         }
-        else if(!isEmpty(2) && !isEmpty(5) && !isEmpty(8)){
+        if(!isEmpty(2) && !isEmpty(5) && !isEmpty(8) && (playerCount != 3 && computerCount != 3)){
             int[] winPosition = {2, 5, 8};
+            playerCount = 0;
+            computerCount = 0;
 
             if(winPosition != null){
                 for(int position : winPosition){
@@ -356,8 +374,10 @@ public class GameBoard {
                 }
             }
         }
-        else if(!isEmpty(3) && !isEmpty(6) && !isEmpty(9)){
+        if(!isEmpty(3) && !isEmpty(6) && !isEmpty(9) && (playerCount != 3 && computerCount != 3)){
             int[] winPosition = {3, 6, 9};
+            playerCount = 0;
+            computerCount = 0;
 
             if(winPosition != null){
                 for(int position : winPosition){
@@ -380,6 +400,10 @@ public class GameBoard {
         else if(computerCount == 3){
             System.out.println("Game Over! The computer won!");
             return "Computer";
+        }
+        else if(!hasEmptySpace()){
+            System.out.println("Game Over! Tie!");
+            return "Tie";
         }
         else{
             return null;
